@@ -16,7 +16,7 @@ class Hound:
     and provides actionable recommendations.
 
     Attributes:
-        db: Vector database type (qdrant, chroma, pinecone, etc.)
+        db: Vector database type (qdrant, chroma, milvus, weaviate, postgres)
         endpoint: Database endpoint URL
         index_name: Index/collection name in the database
         adapter: Connected database adapter
@@ -40,10 +40,10 @@ class Hound:
         Initialize PyHound.
 
         Args:
-            db: Vector database type. Supported: 'qdrant', 'chroma', 'pinecone', 'milvus', 'weaviate'
+            db: Vector database type. Supported: 'qdrant', 'chroma', 'milvus', 'weaviate', 'postgres'
             endpoint: Database endpoint URL
             index_name: Index/collection name in the database
-            api_key: Optional API key for cloud databases
+            api_key: Optional API key (if needed)
             **kwargs: Additional database-specific parameters
 
         Raises:

@@ -54,12 +54,12 @@ Abstract `VectorDB` interface:
 - `get_embeddings()` — Retrieve embeddings
 - `corpus_size()` — Get corpus statistics
 
-**Implemented Adapters:**
+**Implemented Adapters (All Open-Source):**
 -  **Qdrant** — Full implementation
 -  **Chroma** — Full implementation
--  **Pinecone** — Full implementation
 -  **Milvus** — Full implementation
 -  **Weaviate** — Full implementation
+-  **PostgreSQL pgvector** — Full implementation
 -  **Factory pattern** — Extensible for new databases
 
 **Error Handling:**
@@ -209,7 +209,7 @@ frontier = comparison.pareto_frontier()  # Optimal models
 ```
 
 ###  Database Agnostic
-- Works with Qdrant, Chroma, Pinecone, Milvus, Weaviate
+- Works with Qdrant, Chroma, Milvus, Weaviate, PostgreSQL pgvector (all open-source)
 - Factory pattern for extensibility
 - Unified adapter interface
 

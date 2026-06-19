@@ -145,7 +145,7 @@ Update docs when:
 
 ### High Priority
 - [ ] Core diagnostic engine (Rust)
-- [ ] Database adapters (Qdrant, Chroma, Pinecone, etc.)
+- [ ] Database adapters (Qdrant, Chroma, Milvus, Weaviate, PostgreSQL)
 - [ ] Python wrapper completeness
 - [ ] Test coverage
 

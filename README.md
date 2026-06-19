@@ -1,4 +1,4 @@
-# PyHound 🐕
+# PyHound 
 
 **Hunt down retrieval problems. Fix them fast.**
 
@@ -6,11 +6,11 @@ PyHound is a diagnostic tool for RAG/LLM retrieval systems that tells you exactl
 
 ## Features
 
-- 🔍 **Component Diagnosis** — Isolate failures to embedding, vector search, keyword search, or reranker
-- 💡 **Plain English Explanations** — Understand what's wrong without metrics jargon
-- 📊 **Model Comparison** — Compare embedding and reranker models side-by-side with quality/cost trade-offs
-- 📈 **Improvement Tracking** — See exactly what got better after applying a fix (BM25 +5%, Vector +12%, etc.)
-- ⚠️ **Drift Detection** — Monitor embedding quality degradation in production
+-  **Component Diagnosis** — Isolate failures to embedding, vector search, keyword search, or reranker
+-  **Plain English Explanations** — Understand what's wrong without metrics jargon
+-  **Model Comparison** — Compare embedding and reranker models side-by-side with quality/cost trade-offs
+-  **Improvement Tracking** — See exactly what got better after applying a fix (BM25 +5%, Vector +12%, etc.)
+-  **Drift Detection** — Monitor embedding quality degradation in production
 - 🗄️ **Database-Agnostic** — Works with Qdrant, Chroma, Pinecone, Milvus, Weaviate, or any vector DB
 
 ## Quick Start
@@ -56,25 +56,25 @@ print(diagnosis.hunt())
 ═══════════════════════════════════════════════════════════════
 
 Query: "quantum computing"
-Status: ⚠️ RETRIEVAL DEGRADED (F1: 0.52)
+Status:  RETRIEVAL DEGRADED (F1: 0.52)
 
-🔍 COMPONENT ANALYSIS
+ COMPONENT ANALYSIS
 ─────────────────────────────────────────────────────────────
 
-EMBEDDING MODEL: ❌ WEAK
+EMBEDDING MODEL:  WEAK
   • Isotropy 45% (should be >70%)
   • Distinctiveness 21% (should be >60%)
   → Problem: Model too generic for your domain
 
-VECTOR SEARCH: ⚠️ MODERATE
+VECTOR SEARCH:  MODERATE
   • Precision 62% (should be >85%)
   → Impact: 38% wrong results
 
-KEYWORD SEARCH: ✅ GOOD
+KEYWORD SEARCH:  GOOD
   • Precision 85%, Recall 78%
   → Status: Working well
 
-RERANKER: ✅ GOOD
+RERANKER:  GOOD
   • Calibration 91%
   → Impact: Doing its job, can't fix upstream issues
 
@@ -87,7 +87,7 @@ domain-specific concepts. Vector search is failing because of this.
 
 HOW TO FIX IT (Ranked by Impact)
 ─────────────────────────────────────────────────────────────
-1. 🎯 HIGHEST ROI: Upgrade embedding model
+1.  HIGHEST ROI: Upgrade embedding model
    Try: text-embedding-3-large OR domain-specific model
    Quality gain: +8-12 F1 points
    Cost: +$8/month
@@ -173,13 +173,13 @@ if drift.significant:
 
 ## Supported Vector Databases
 
-- ✅ **Qdrant** — Full support
-- ✅ **Chroma** — Full support
-- ✅ **Pinecone** — Full support
-- ✅ **Milvus** — Full support
-- ✅ **Weaviate** — Full support
-- ✅ **PostgreSQL (pgvector)** — Full support
-- ✅ **Custom** — Query any database
+-  **Qdrant** — Full support
+-  **Chroma** — Full support
+-  **Pinecone** — Full support
+-  **Milvus** — Full support
+-  **Weaviate** — Full support
+-  **PostgreSQL (pgvector)** — Full support
+-  **Custom** — Query any database
 
 Add more databases by implementing the `VectorDB` protocol.
 
@@ -280,4 +280,4 @@ Built with:
 
 ---
 
-**Hunt down retrieval problems. Fix them fast.** 🐕
+**Hunt down retrieval problems. Fix them fast.** 

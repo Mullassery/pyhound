@@ -184,4 +184,4 @@ Be respectful and constructive. We welcome all backgrounds and experience levels
 
 ---
 
-**Thank you for contributing to PyHound!** 🐕
+**Thank you for contributing to PyHound!** 

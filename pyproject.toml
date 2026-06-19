@@ -1,0 +1,84 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel", "maturin>=1.0,<2.0"]
+build-backend = "maturin.build"
+
+[project]
+name = "pyhound"
+version = "0.1.0"
+description = "Hunt down retrieval problems in RAG/LLM systems. Diagnose exactly which component failed and how to fix it."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Georgi Mammen Mullassery", email = "mullassery@gmail.com"}
+]
+keywords = ["rag", "llm", "retrieval", "diagnostics", "embedding", "vector-search", "debugging"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Rust",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "numpy>=1.20.0",
+    "requests>=2.28.0",
+]
+
+[project.optional-dependencies]
+qdrant = ["qdrant-client>=2.0.0"]
+chroma = ["chromadb>=0.4.0"]
+pinecone = ["pinecone-client>=2.2.0"]
+milvus = ["pymilvus>=2.3.0"]
+weaviate = ["weaviate-client>=3.0.0"]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "mypy>=1.0.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "maturin>=1.0.0",
+]
+all = [
+    "pyhound[qdrant,chroma,pinecone,milvus,weaviate,dev]",
+]
+
+[project.urls]
+Homepage = "https://github.com/Mullassery/pyhound"
+Documentation = "https://github.com/Mullassery/pyhound/tree/main/docs"
+Repository = "https://github.com/Mullassery/pyhound.git"
+"Bug Tracker" = "https://github.com/Mullassery/pyhound/issues"
+Changelog = "https://github.com/Mullassery/pyhound/releases"
+
+[tool.maturin]
+module-name = "pyhound._core"
+python-source = "pyhound"
+features = ["pyo3/extension-module"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "--cov=pyhound --cov-report=term-missing"
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+
+[tool.black]
+line-length = 100
+target-version = ["py38"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+select = ["E", "F", "W", "I", "N", "RUF"]

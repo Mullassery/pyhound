@@ -5,7 +5,7 @@
 ### Installation
 
 ```bash
-pip install pyhound
+pip install pyhound-core
 ```
 
 ### Basic Workflow
@@ -213,7 +213,7 @@ hound = Hound(
 psql -U postgres -d your_db -c "CREATE EXTENSION IF NOT EXISTS vector"
 
 # Install Python dependencies
-pip install pyhound[postgres]
+pip install pyhound-core[postgres]
 ```
 
 **Example Table Structure:**

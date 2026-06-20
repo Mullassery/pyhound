@@ -6,8 +6,9 @@ mod metrics;
 
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
+use pyo3::Bound;
 use metrics::{
-    compute_coverage, compute_distinctiveness, compute_drift, compute_isotropy,
+    compute_coverage, compute_distinctiveness, detect_drift, compute_isotropy,
     compute_retrieval_metrics,
 };
 
@@ -35,7 +36,7 @@ fn py_detect_drift(
     baseline_embeddings: Vec<Vec<f32>>,
     current_embeddings: Vec<Vec<f32>>,
 ) -> PyResult<f32> {
-    Ok(compute_drift(&baseline_embeddings, &current_embeddings))
+    Ok(detect_drift(&baseline_embeddings, &current_embeddings))
 }
 
 /// Compute retrieval metrics (precision, recall, F1, MRR, NDCG)
@@ -77,7 +78,7 @@ fn py_compute_quality_score(embeddings: Vec<Vec<f32>>) -> PyResult<f32> {
 
 /// PyHound Python module
 #[pymodule]
-fn pyhound_core(_py: Python, m: &PyModule) -> PyResult<()> {
+fn pyhound_core(_py: Python, m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(py_compute_isotropy, m)?)?;
     m.add_function(wrap_pyfunction!(py_compute_coverage, m)?)?;
     m.add_function(wrap_pyfunction!(py_compute_distinctiveness, m)?)?;

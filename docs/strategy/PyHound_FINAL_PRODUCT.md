@@ -272,12 +272,12 @@ Works with Qdrant, Chroma, Pinecone, Milvus, Weaviate (or any vector DB)
 
 ### Option 1: pip (recommended)
 ```bash
-pip install pyhound
+pip install pyhound-core
 ```
 
 ### Option 2: uv
 ```bash
-uv pip install pyhound
+uv pip install pyhound-core
 ```
 
 ### Option 3: Direct download
@@ -353,7 +353,7 @@ PyHound's philosophy: **Hunt down the problem, don't guess.**
 
 ## Next Steps
 
-1. **Try PyHound** — `pip install pyhound`
+1. **Try PyHound** — `pip install pyhound-core`
 2. **Point it at your DB** — `Hound(db="qdrant", ...)`
 3. **Run diagnosis** — `hound.diagnose(query, top_k=5)`
 4. **Get plain English report** — `print(diagnosis.hunt())`

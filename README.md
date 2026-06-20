@@ -65,7 +65,7 @@ Use PyHound when:
 ### Step 1: Install PyHound (30 seconds)
 
 ```bash
-pip install pyhound
+pip install pyhound-core
 ```
 
 ### Step 2: Set Up a Vector Database (Local Example)

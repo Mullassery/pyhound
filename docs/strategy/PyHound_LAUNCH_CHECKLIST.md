@@ -122,7 +122,7 @@ diagnosis = hound.diagnose(query="...", top_k=5)
 print(diagnosis.hunt())
 ```
 
-Delivery: GitHub + PyPI (pip install pyhound)
+Delivery: GitHub + PyPI (pip install pyhound-core)
 
 ### Phase 2: Retrieval Engine (6-8 weeks later)
 **Focus:** Full retrieval platform for teams that want it
@@ -143,12 +143,12 @@ Features:
 
 ### 1. pip (Recommended)
 ```bash
-pip install pyhound
+pip install pyhound-core
 ```
 
 ### 2. uv (Fast package manager)
 ```bash
-uv pip install pyhound
+uv pip install pyhound-core
 ```
 
 ### 3. Direct download (curl)

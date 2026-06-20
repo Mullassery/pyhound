@@ -10,13 +10,13 @@
 ### Via pip
 
 ```bash
-pip install pyhound
+pip install pyhound-core
 ```
 
 ### Via uv
 
 ```bash
-uv add pyhound
+uv add pyhound-core
 ```
 
 ### From Source
@@ -46,19 +46,19 @@ print(pyhound.__version__)
 
 ```bash
 # Elasticsearch
-pip install pyhound[elasticsearch]
+pip install pyhound-core[elasticsearch]
 
 # Weaviate
-pip install pyhound[weaviate]
+pip install pyhound-core[weaviate]
 
 # Pinecone
-pip install pyhound[pinecone]
+pip install pyhound-core[pinecone]
 ```
 
 ### For Full Development
 
 ```bash
-pip install pyhound[dev]
+pip install pyhound-core[dev]
 ```
 
 ## Docker

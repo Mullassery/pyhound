@@ -283,14 +283,26 @@ mod tests {
 
     #[test]
     fn test_coverage() {
-        let embeddings = vec![
+        // Well-spread embeddings should score meaningfully higher than a tightly
+        // clustered set. (compute_coverage uses a saturating normalization
+        // `var/(1+var)`, so absolute scores stay in 0..~0.5 for unit vectors —
+        // the meaningful signal is diverse > clustered.)
+        let diverse = vec![
             vec![1.0, 0.0],
             vec![-1.0, 0.0],
             vec![0.0, 1.0],
             vec![0.0, -1.0],
         ];
-        let coverage = compute_coverage(&embeddings);
-        assert!(coverage > 0.5); // Diverse coverage
+        let clustered = vec![
+            vec![1.0, 0.0],
+            vec![0.99, 0.01],
+            vec![1.0, 0.02],
+            vec![0.98, 0.0],
+        ];
+        let cov_diverse = compute_coverage(&diverse);
+        let cov_clustered = compute_coverage(&clustered);
+        assert!(cov_diverse > cov_clustered, "diverse ({cov_diverse}) should exceed clustered ({cov_clustered})");
+        assert!(cov_diverse > 0.3, "diverse coverage was {cov_diverse}");
     }
 
     #[test]

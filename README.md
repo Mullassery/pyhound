@@ -1,13 +1,13 @@
-# PyHound
+# PyVectorSearch
 
-[![PyPI version](https://img.shields.io/badge/PyPI-pyhound--core%200.1.0-blue.svg)](https://pypi.org/project/pyhound-core/)
+[![PyPI version](https://img.shields.io/badge/PyPI-pyvectorsearch%200.1.0-blue.svg)](https://pypi.org/project/pyvectorsearch/)
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8+-green.svg)](https://www.python.org/downloads/)
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/Mullassery/pyhound?style=social)](https://github.com/Mullassery/pyhound)
+[![GitHub stars](https://img.shields.io/github/stars/Mullassery/pyvectorsearch?style=social)](https://github.com/Mullassery/pyvectorsearch)
 
 **Hunt down retrieval problems. Fix them fast.**
 
-PyHound diagnoses **why** your RAG retrieval is failing—not just that it failed. It's the first tool to isolate components (embedding, vector search, BM25, reranker), identify root causes, and recommend fixes with ROI estimates.
+PyVectorSearch diagnoses **why** your RAG retrieval is failing—not just that it failed. It's the first tool to isolate components (embedding, vector search, BM25, reranker), identify root causes, and recommend fixes with ROI estimates.
 
 ## Why Star This?
 
@@ -17,11 +17,11 @@ PyHound diagnoses **why** your RAG retrieval is failing—not just that it faile
 - **No vendor lock-in** — MIT licensed, 5 open-source databases, local deployment
 - **Production-ready** — Used for RAG/LLM diagnostics, not experimental
 
-**Phoenix/Arize tell you something's wrong. PyHound tells you what to do about it.**
+**Phoenix/Arize tell you something's wrong. PyVectorSearch tells you what to do about it.**
 
 ## Quick Comparison
 
-| Metric | PyHound | Phoenix | Arize | Evidently |
+| Metric | PyVectorSearch | Phoenix | Arize | Evidently |
 |--------|---------|---------|-------|-----------|
 | Diagnosis Latency | **45ms** | 200ms | 250ms | 150ms |
 | Component Isolation | **Yes** | No | No | No |
@@ -29,7 +29,7 @@ PyHound diagnoses **why** your RAG retrieval is failing—not just that it faile
 | Recommendations | **Yes** | No | No | No |
 | Cost per month | **Free** | $$$ | $$$ | Free |
 
-## What Problem Does PyHound Solve?
+## What Problem Does PyVectorSearch Solve?
 
 Your RAG system's retrieval quality degraded. You know something is wrong, but not what:
 - Is the embedding model bad?
@@ -37,11 +37,11 @@ Your RAG system's retrieval quality degraded. You know something is wrong, but n
 - Is keyword search missing matches?
 - Is the reranker miscalibrated?
 
-PyHound isolates exactly which component failed and explains how to fix it.
+PyVectorSearch isolates exactly which component failed and explains how to fix it.
 
-## When Should You Use PyHound?
+## When Should You Use PyVectorSearch?
 
-Use PyHound when:
+Use PyVectorSearch when:
 - Retrieval quality drops unexpectedly
 - You're choosing between embedding models
 - You want to understand retrieval performance
@@ -60,18 +60,18 @@ Use PyHound when:
 
 ## 5-Minute Setup
 
-**Get PyHound running in under 5 minutes**
+**Get PyVectorSearch running in under 5 minutes**
 
-### Step 1: Install PyHound (30 seconds)
+### Step 1: Install PyVectorSearch (30 seconds)
 
 ```bash
-pip install pyhound-core
+pip install pyvectorsearch
 ```
 
 OR
 
 ```bash
-uv add pyhound-core
+uv add pyvectorsearch
 ```
 
 ### Step 2: Set Up a Vector Database (Local Example)
@@ -105,12 +105,12 @@ client.upsert(
 )
 ```
 
-### Step 4: Run PyHound Diagnosis
+### Step 4: Run PyVectorSearch Diagnosis
 
 ```python
-from pyhound import Hound
+from pyvectorsearch import Hound
 
-# Initialize PyHound
+# Initialize PyVectorSearch
 hound = Hound(db="qdrant", endpoint="localhost:6333")
 
 # Diagnose retrieval quality
@@ -126,11 +126,11 @@ print(diagnosis.hunt())
 
 ### Example Output
 
-PyHound tells you exactly what's wrong in plain English:
+PyVectorSearch tells you exactly what's wrong in plain English:
 
 ```
 =======================================================
-              PyHound Diagnosis Report
+              PyVectorSearch Diagnosis Report
 =======================================================
 
 Query: "quantum computing"
@@ -200,7 +200,7 @@ RECOMMENDATIONS (Ranked by Impact)
 
 ## Star If This Helps!
 
-If PyHound solves your retrieval debugging problem, consider giving it a star ⭐ on GitHub. It helps other teams discover this tool and accelerates RAG/LLM development.
+If PyVectorSearch solves your retrieval debugging problem, consider giving it a star ⭐ on GitHub. It helps other teams discover this tool and accelerates RAG/LLM development.
 
 ## Understanding the Output
 
@@ -212,14 +212,14 @@ If PyHound solves your retrieval debugging problem, consider giving it a star �
 
 ## FAQ
 
-**Q: Do I need to set up PyHound specially?**  
+**Q: Do I need to set up PyVectorSearch specially?**  
 A: No. Install via pip, point it at your existing vector database, and run diagnosis.
 
-**Q: Can PyHound work with my existing vector database?**  
+**Q: Can PyVectorSearch work with my existing vector database?**  
 A: Yes. Supports Qdrant, Chroma, Milvus, Weaviate, PostgreSQL pgvector (all open-source).
 
-**Q: Does PyHound modify my data?**  
-A: No. PyHound is read-only. It analyzes but never modifies your vectors or documents.
+**Q: Does PyVectorSearch modify my data?**  
+A: No. PyVectorSearch is read-only. It analyzes but never modifies your vectors or documents.
 
 **Q: What if I don't have ground truth (expected_docs)?**  
 A: Ground truth is optional. Diagnostics work without it, but you get more accurate ROI estimates with it.
@@ -227,14 +227,14 @@ A: Ground truth is optional. Diagnostics work without it, but you get more accur
 **Q: How long does a diagnosis take?**  
 A: Typically 45ms for small queries. Larger corpus analysis may take seconds.
 
-**Q: Can I use PyHound in production?**  
+**Q: Can I use PyVectorSearch in production?**  
 A: Yes. It's designed for production monitoring. Overhead is minimal (<1ms per operation).
 
-**Q: Does PyHound require Rust knowledge?**  
-A: No. PyHound is pure Python to use. Rust is only for building from source.
+**Q: Does PyVectorSearch require Rust knowledge?**  
+A: No. PyVectorSearch is pure Python to use. Rust is only for building from source.
 
-**Q: Should I use PyHound instead of Phoenix/Arize?**  
-A: Yes. PyHound replaces them by providing diagnostics (why it failed, how to fix it) instead of just monitoring (that it failed). Phoenix/Arize are focused on infrastructure monitoring; PyHound is focused on retrieval quality and optimization.
+**Q: Should I use PyVectorSearch instead of Phoenix/Arize?**  
+A: Yes. PyVectorSearch replaces them by providing diagnostics (why it failed, how to fix it) instead of just monitoring (that it failed). Phoenix/Arize are focused on infrastructure monitoring; PyVectorSearch is focused on retrieval quality and optimization.
 
 ## Supported Vector Databases
 
@@ -270,11 +270,11 @@ Python Wrapper
 - Embeddable everywhere (C FFI, PyO3)
 - Single binary, zero dependencies
 
-## Why PyHound Over Phoenix/Arize?
+## Why PyVectorSearch Over Phoenix/Arize?
 
-PyHound replaces observability platforms by going deeper: it doesn't just tell you something is broken, it explains why and how to fix it.
+PyVectorSearch replaces observability platforms by going deeper: it doesn't just tell you something is broken, it explains why and how to fix it.
 
-| Question | Phoenix/Arize | PyHound |
+| Question | Phoenix/Arize | PyVectorSearch |
 |----------|---------------|---------|
 | Is retrieval broken? | Yes | Yes (+ metrics) |
 | Why is it broken? | No | Yes (root cause) |
@@ -283,13 +283,13 @@ PyHound replaces observability platforms by going deeper: it doesn't just tell y
 | Did my fix work? | No | Yes (before/after comparison) |
 | What model should I use? | No | Yes (comparison with cost analysis) |
 
-**Bottom line:** Phoenix/Arize tell you something's wrong. PyHound tells you what to do about it.
+**Bottom line:** Phoenix/Arize tell you something's wrong. PyVectorSearch tells you what to do about it.
 
 ## Speed Comparison
 
-PyHound is 3-10x faster than competitors by eliminating cloud latency and Python bottlenecks.
+PyVectorSearch is 3-10x faster than competitors by eliminating cloud latency and Python bottlenecks.
 
-| Metric | Phoenix | Arize | Evidently | PyHound |
+| Metric | Phoenix | Arize | Evidently | PyVectorSearch |
 |--------|---------|-------|-----------|---------|
 | Diagnosis Latency (100k docs) | 200ms | 250ms | 150ms | 45ms |
 | Per-Embedding Quality Score | - | - | 8.5ms | 0.8ms |
@@ -303,7 +303,7 @@ PyHound is 3-10x faster than competitors by eliminating cloud latency and Python
 
 ## Feature Comparison Matrix
 
-| Feature | Phoenix | Arize | Evidently | Ragas | PyHound |
+| Feature | Phoenix | Arize | Evidently | Ragas | PyVectorSearch |
 |---------|---------|-------|-----------|-------|---------|
 | Component Isolation | No | No | No | No | Yes |
 | Root Cause Analysis | No | No | No | No | Yes |
@@ -382,7 +382,7 @@ pip install chromadb
 
 ```python
 # Make sure you have embeddings in your database
-# PyHound only works with existing vector data
+# PyVectorSearch only works with existing vector data
 
 # Verify database has data:
 from qdrant_client import QdrantClient
@@ -395,7 +395,7 @@ print(f"Total vectors: {collection_info.points_count}")
 
 | Issue | Solution |
 |-------|----------|
-| "Collection not found" | Create collection first before running PyHound |
+| "Collection not found" | Create collection first before running PyVectorSearch |
 | "No query results" | Ensure your database has documents indexed |
 | "Slow diagnostics" | For large corpora (>1M docs), diagnostics take longer. Use smaller top_k |
 | "Missing expected_docs" | Ground truth is optional. Diagnostics still work without it |
@@ -403,7 +403,7 @@ print(f"Total vectors: {collection_info.points_count}")
 ## API Quick Reference
 
 ```python
-from pyhound import Hound
+from pyvectorsearch import Hound
 
 hound = Hound(db="qdrant", endpoint="localhost:6333")
 
@@ -433,7 +433,7 @@ scorer.trend_analysis(...)    # Historical trends
 
 ## Documentation
 
-- [ARCHITECTURE.md](docs/ARCHITECTURE.md) — How PyHound works internally
+- [ARCHITECTURE.md](docs/ARCHITECTURE.md) — How PyVectorSearch works internally
 - [CONTRIBUTING.md](CONTRIBUTING.md) — How to contribute
 - [BENCHMARKS_AND_COMPARISON.md](BENCHMARKS_AND_COMPARISON.md) — Performance vs competitors
 - [docs/GUIDE.md](docs/GUIDE.md) — Full user guide with examples
@@ -461,7 +461,7 @@ Measured on single machine (8 cores, 16GB RAM):
 - Evidently: 150ms diagnosis (3.3x slower)
 - Arize: 250ms diagnosis (5.5x slower)
 
-**Why PyHound is faster:**
+**Why PyVectorSearch is faster:**
 - Rust core, not Python (no GIL)
 - Local execution (no network latency)
 - Optimized metric algorithms
@@ -477,7 +477,7 @@ Measured on single machine (8 cores, 16GB RAM):
 
 MIT License — See [LICENSE](LICENSE) for details.
 
-PyHound is free for commercial use.
+PyVectorSearch is free for commercial use.
 
 ## Contributing
 
@@ -492,15 +492,15 @@ Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines
 
 ## Next Steps
 
-1. **Try the Quick Start** — Get PyHound working with Qdrant in 5 minutes
+1. **Try the Quick Start** — Get PyVectorSearch working with Qdrant in 5 minutes
 2. **Read Use Cases** — See which scenario matches your problem
-3. **Check Benchmarks** — Understand PyHound's performance vs competitors
+3. **Check Benchmarks** — Understand PyVectorSearch's performance vs competitors
 4. **Explore Roadmap** — See what's planned (v0.2-v1.0)
 
 ## Support
 
-- GitHub Discussions: https://github.com/Mullassery/pyhound/discussions
-- Issues: https://github.com/Mullassery/pyhound/issues
+- GitHub Discussions: https://github.com/Mullassery/pyvectorsearch/discussions
+- Issues: https://github.com/Mullassery/pyvectorsearch/issues
 - Email: mullassery@gmail.com
 
 ## Authors

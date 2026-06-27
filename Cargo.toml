@@ -1,10 +1,10 @@
 [package]
-name = "pyhound-core"
+name = "pyvectorsearch"
 version = "0.1.0"
 edition = "2021"
 authors = ["Georgi Mammen Mullassery <mullassery@gmail.com>"]
 license = "MIT"
-description = "Rust core for PyHound - retrieval diagnostics engine"
+description = "Vector search diagnostics engine for RAG/LLM systems"
 
 [dependencies]
 pyo3 = { version = "0.23", features = ["extension-module"] }

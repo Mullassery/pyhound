@@ -2,7 +2,7 @@
 
 import pytest
 import numpy as np
-from pyhound.diagnosis import Diagnosis
+from pyvectorsearch.diagnosis import Diagnosis
 
 
 class TestDiagnosis:

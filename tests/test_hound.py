@@ -1,7 +1,7 @@
 """Tests for Hound class."""
 
 import pytest
-from pyhound import Hound
+from pyvectorsearch import Hound
 
 
 class TestHound:
@@ -43,7 +43,7 @@ class TestDiagnosis:
 
     def test_diagnosis_hunt(self):
         """Test getting plain English diagnosis."""
-        from pyhound.diagnosis import Diagnosis
+        from pyvectorsearch.diagnosis import Diagnosis
 
         diagnosis = Diagnosis(query="test query", results=[])
         report = diagnosis.hunt()

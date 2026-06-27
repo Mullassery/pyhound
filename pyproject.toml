@@ -3,9 +3,9 @@ requires = ["setuptools>=65.0", "wheel", "maturin>=1.0,<2.0"]
 build-backend = "maturin.build"
 
 [project]
-name = "pyhound-core"
+name = "pyvectorsearch"
 version = "0.1.0"
-description = "Hunt down retrieval problems in RAG/LLM systems. Diagnose exactly which component failed and how to fix it."
+description = "Diagnose vector search problems in RAG/LLM systems. Hunt down why retrieval fails — embedding quality, vector search, BM25, reranker analysis."
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
@@ -60,7 +60,7 @@ Repository = "https://github.com/Mullassery/pyhound.git"
 Changelog = "https://github.com/Mullassery/pyhound/releases"
 
 [tool.maturin]
-module-name = "pyhound._core"
+module-name = "pyvectorsearch._core"
 features = ["pyo3/extension-module"]
 
 [tool.pytest.ini_options]

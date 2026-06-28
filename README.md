@@ -473,15 +473,23 @@ Measured on single machine (8 cores, 16GB RAM):
 - Rust 1.70+ (for building from source)
 - Vector DB client (Qdrant, Chroma, etc.)
 
+## Community
+
+- **GitHub Issues** — [Report bugs and request features](https://github.com/Mullassery/pyvectorhound/issues)
+- **GitHub Discussions** — [Questions and best practices](https://github.com/Mullassery/pyvectorhound/discussions)
+- **Code of Conduct** — [Be respectful and constructive](./CODE_OF_CONDUCT.md)
+
+## Contributing
+
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and guidelines.
+
+For security issues, see [SECURITY.md](SECURITY.md).
+
 ## License
 
 MIT License — See [LICENSE](LICENSE) for details.
 
 PyVectorhound is free for commercial use.
-
-## Contributing
-
-Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## Roadmap
 
